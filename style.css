@@ -2,35 +2,55 @@ body {
     font-family: "Rubik";
 }
 h1 {
-    color: #e01111;
+    color: #2300bd;
     font-size: 40px;
     text-align: center;
 }
 p {
-    color: #121212;
-    font-size: 12px;
-    text-align: center;
-    line-height: 4;
-    letter-spacing: 12px;
-    overflow: hidden;
-    text-shadow:
-    0 0 #121212,
-    0 0 #e01111;
-    color: transparent;
+    font-size: 52px;
+    font-weight: normal;
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #121212,
+                 2px 2px 0 #121213,
+                 3px 3px 0 #121214,
+                 4px 4px 0 #121215,
+                 5px 5px 0 #121216,
+                 6px 6px 0 #121217,
+                 7px 7px 0 #121218,
+                 8px 8px 0 #121219;
+    color: #2300bd;
     transition: all 1s;
+    text-align: center;
 }
 p:hover {
-    text-shadow:
-    -400px 0 #2300bd,
-    400px 0 #e01111;
-}   
+    text-shadow: 1px -1px 0 #2300bd,
+                 2px -2px 0 #2300bd,
+                 3px -3px 0 #2300bd,
+                 4px -4px 0 #2300bd,
+                 5px -5px 0 #2300bd,
+                 6px -6px 0 #2300bd,
+                 7px -7px 0 #2300bd,
+                 8px -8px 0 #2300bd;
+    color: #121212;
+}
+p {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background: linear-gradient(to right, #2300bd, #121212);
+    width: 500px;
+    height: 68px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+    
+}
 a {
     text-decoration: none;
     color: #2300bd;
     font-size: 40px;
     text-align: center;
     display: block;
-    padding: 100px 100px;
+    padding: 12px 100px;
 }
 a:after {
     content: "";
@@ -47,11 +67,6 @@ a:hover:after {
     width: 0%;
     border-bottom-width:1px;
 }
-p {
-    background: linear-gradient(to right, #e01111, #2300bd);
-    width: 500px;
-    height: 48px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+img {
+    border-radius: 12px;
 }
