@@ -2,48 +2,56 @@ body {
     font-family: "Rubik";
 }
 h1 {
-    color: #121212;
+    color: #e01111;
     font-size: 40px;
     text-align: center;
 }
 p {
-    color: red;
+    color: #121212;
     font-size: 12px;
     text-align: center;
     line-height: 4;
     letter-spacing: 12px;
     overflow: hidden;
     text-shadow:
-    0 0 rgb(247, 7, 7),
-    0 0 rgb(20, 240, 0);
+    0 0 #121212,
+    0 0 #e01111;
     color: transparent;
     transition: all 1s;
 }
 p:hover {
     text-shadow:
-    -400px 0 rgb(255, 0, 0),
-    400px 0 rgb(0, 175, 73);
+    -400px 0 #2300bd,
+    400px 0 #e01111;
 }   
 a {
     text-decoration: none;
-    color: rgb(0, 0, 255);
+    color: #2300bd;
     font-size: 40px;
     text-align: center;
     display: block;
+    padding: 100px 100px;
 }
 a:after {
     content: "";
     display: block;
     position: relative;
     z-index: -1;
-    width: 30%;
+    width: 32%;
     margin: auto;
-    border-bottom: 4px solid rgb(0, 0, 255);
-    bottom: .15em;
+    border-bottom: 4px solid #2300bd;
+    bottom: .12em;
     transition: all 1s;
 }
-  
 a:hover:after {
     width: 0%;
-    border-bottom-width: 1px;
+    border-bottom-width:1px;
+}
+p {
+    background: linear-gradient(to right, #e01111, #2300bd);
+    width: 500px;
+    height: 48px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
