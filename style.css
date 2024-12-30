@@ -2,7 +2,7 @@ body {
     font-family: "Rubik";
 }
 h1 {
-    color: black;
+    color: #121212;
     font-size: 40px;
     text-align: center;
 }
@@ -10,11 +10,40 @@ p {
     color: red;
     font-size: 12px;
     text-align: center;
+    line-height: 4;
+    letter-spacing: 12px;
+    overflow: hidden;
+    text-shadow:
+    0 0 rgb(247, 7, 7),
+    0 0 rgb(20, 240, 0);
+    color: transparent;
+    transition: all 1s;
 }
+p:hover {
+    text-shadow:
+    -400px 0 rgb(255, 0, 0),
+    400px 0 rgb(0, 175, 73);
+}   
 a {
     text-decoration: none;
-    color: blue;
+    color: rgb(0, 0, 255);
     font-size: 40px;
     text-align: center;
     display: block;
+}
+a:after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    width: 30%;
+    margin: auto;
+    border-bottom: 4px solid rgb(0, 0, 255);
+    bottom: .15em;
+    transition: all 1s;
+}
+  
+a:hover:after {
+    width: 0%;
+    border-bottom-width: 1px;
 }
