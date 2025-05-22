@@ -6,21 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Welcome</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/2596/PNG/512/dot_icon_155477.png">
     <style>
-        #matrixCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-body > * {
-  position: relative;
-  z-index: 1;
-}
     body {
         background: #121212;
     }
@@ -35,34 +23,6 @@ body > * {
         <center/>
     </figure>
     <a href="https://www.behance.net/aleksey_nevrotov" target="_blank">—> Моё портфолио <—</a>
-    <script>
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-const letters = '0123456789ABCDEF'.split('');
-const fontSize = 16;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
-function draw() {
-  ctx.fillStyle = 'rgba(18, 18, 18, 0.24)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#2300bd';
-  ctx.font = fontSize + 'px monospace';
-  for(let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-    if(drops[i] * fontSize > canvas.height && Math.random() > 0.976) {
-      drops[i] = 0;
-    }
-    drops[i]++;
-  }
-}
-setInterval(draw, 36);
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
