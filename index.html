@@ -10,29 +10,26 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     referrerpolicy="no-referrer"
   />
-
   <style>
     body {
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
       color: #fff;
-      padding: 30px 15px;
+      padding: 5px 5px;
       text-align: center;
     }
-
     .avatar {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
 
     h1 {
-      font-size: 25px;
+      font-size: 20px;
       margin-bottom: 25px;
     }
-
     .link {
       position: relative;
       overflow: hidden;
@@ -41,32 +38,27 @@
       justify-content: center;
       gap: 10px;
       margin: 10px auto;
-      max-width: 400px;
+      max-width: 70%;
       padding: 15px 25px;
       background: #1e1e1e;
       border: 1px solid #333;
       border-radius: 30px;
       color: #fff;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
       transition: 0.3s;
     }
-
     .link i {
       font-size: 15px;
     }
-
     .link:hover {
       background: #2b2b2b;
       transform: scale(1.02);
     }
-
     .link:active {
       transform: scale(0.97);
       background: #3a3a3a;
     }
-
-    /* Эффект отблеска — от начала до конца кнопки */
     .link.shine::before {
       content: "";
       position: absolute;
@@ -83,7 +75,6 @@
       animation: shine 2.5s ease-in-out infinite;
       pointer-events: none;
     }
-
     @keyframes shine {
       0% {
         left: -100%;
@@ -92,10 +83,9 @@
         left: 100%;
       }
     }
-
     footer {
-      margin-top: 40px;
-      font-size: 15px;
+      margin-top: 25px;
+      font-size: 10px;
       color: #666;
     }
   </style>
@@ -103,7 +93,6 @@
 <body>
   <img src="https://i.postimg.cc/MZ1KFkP0/logo.png" alt="Elazar" class="avatar" />
   <h1>Не́вротов Алексей Сергеевич</h1>
-
   <a class="link shine" href="https://www.behance.net/aleksey_nevrotov" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-behance"></i>Behance
   </a>
@@ -113,7 +102,6 @@
   <a class="link shine" href="http://www.youtube.com/@AlekseiNevrotov" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-youtube"></i>YouTube
   </a>
-
   <a class="link" href="https://music.apple.com/ru/artist/elazar/1133744695" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-apple"></i>Apple Music
   </a>
@@ -141,7 +129,6 @@
   <a class="link" href="https://profi.ru/geo-spb/profile/NevrotovAS/" target="_blank" rel="noopener noreferrer">
     <i class="fas fa-briefcase"></i>Profi.ru
   </a>
-
   <footer>© 2025 Elazar. Все права защищены.</footer>
 </body>
 </html>
