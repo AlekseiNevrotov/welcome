@@ -32,10 +32,16 @@
       -ms-user-select: none;
       pointer-events: none;
     }
+    /* Убираем pointer-events с h1 — он должен быть интерактивным */
     h1 {
+      font-family: 'Alien League', sans-serif; /* Принудительно применяем Alien League */
       font-size: 20px;
       margin-bottom: 25px;
       font-weight: 400;
+      user-select: none; /* Отключаем выделение текста */
+      -webkit-font-smoothing: antialiased; /* Для лучшей четкости на iOS */
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
     .link {
       position: relative;
@@ -97,8 +103,6 @@
       color: #666;
       margin-bottom: 30px;
     }
-
-    /* Отключаем эффекты hover на устройствах без курсора */
     @media (hover: none) {
       .link:hover {
         background: #1e1e1e;
