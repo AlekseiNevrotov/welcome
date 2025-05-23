@@ -8,15 +8,13 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    referrerpolicy="no-referrer"
-  />
+    referrerpolicy="no-referrer"/>
   <style>
     @font-face {
       font-family: 'Alien League';
-      src: url('fonts/AlienLeague.woff2') format('woff2');
+      src: url('https://cdn.jsdelivr.net/gh/AlekseyNevrotov/fonts/AlienLeague.ttf') format('truetype');
       font-display: swap;
     }
-
     body {
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
@@ -24,7 +22,6 @@
       padding: 5px 5px;
       text-align: center;
     }
-
     .logo-text {
       font-family: 'Alien League', sans-serif;
       font-size: 50px;
@@ -35,13 +32,11 @@
       -ms-user-select: none;
       pointer-events: none;
     }
-
     h1 {
       font-size: 20px;
       margin-bottom: 25px;
       font-weight: 400;
     }
-
     .link {
       position: relative;
       overflow: hidden;
@@ -59,22 +54,19 @@
       text-decoration: none;
       font-size: 15px;
       transition: 0.3s;
+      touch-action: manipulation; /* улучшает обработку жестов на мобилах */
     }
-
     .link i {
       font-size: 15px;
     }
-
     .link:hover {
       background: #2b2b2b;
       transform: scale(1.02);
     }
-
     .link:active {
       transform: scale(0.97);
       background: #3a3a3a;
     }
-
     .link.shine::before {
       content: "";
       position: absolute;
@@ -91,7 +83,6 @@
       animation: shine 2.5s ease-in-out infinite;
       pointer-events: none;
     }
-
     @keyframes shine {
       0% {
         left: -100%;
@@ -100,19 +91,25 @@
         left: 100%;
       }
     }
-
     footer {
       margin-top: 25px;
       font-size: 12px;
       color: #666;
       margin-bottom: 30px;
     }
+
+    /* Отключаем эффекты hover на устройствах без курсора */
+    @media (hover: none) {
+      .link:hover {
+        background: #1e1e1e;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="logo-text">Elazar</div>
   <h1>Не́вротов Алексей Сергеевич</h1>
-
   <a class="link shine" href="https://www.behance.net/aleksey_nevrotov" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-behance"></i>Behance
   </a>
@@ -149,7 +146,15 @@
   <a class="link" href="https://profi.ru/geo-spb/profile/NevrotovAS/" target="_blank" rel="noopener noreferrer">
     <i class="fas fa-briefcase"></i>Profi.ru
   </a>
-
   <footer>© 2025 Elazar. Все права защищены.</footer>
+
+  <script>
+    // Сбрасываем активное состояние при касании, чтобы избежать "залипания" кнопок на iOS
+    document.addEventListener('touchstart', () => {
+      if(document.activeElement) {
+        document.activeElement.blur();
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
