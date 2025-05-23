@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elazar</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
   <style>
     @font-face {
       font-family: 'Alien League';
@@ -21,7 +17,7 @@
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
       color: #fff;
-      padding: 5px 5px;
+      padding: 5px;
       text-align: center;
     }
 
@@ -101,31 +97,31 @@
       margin-bottom: 30px;
     }
 
-    /* Disable hover/shine on mobile */
+    /* Отключение hover/shine на мобильных */
     @media (hover: none) {
       .link:hover {
         background: #1e1e1e !important;
         transform: none !important;
       }
-
       .link.shine::before {
         animation: none !important;
       }
     }
 
-    /* Loader style */
-    .loader {
-      border: 2px solid #fff;
-      border-top: 2px solid transparent;
+    /* Индикатор загрузки */
+    .loading::after {
+      content: "";
+      border: 2px solid #ccc;
+      border-top-color: #fff;
       border-radius: 50%;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
       animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -149,20 +145,32 @@
   <footer>© 2025 Elazar. Все права защищены.</footer>
 
   <script>
-    function isMobile() {
-      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    }
+    // Проверка на мобильное устройство
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (isMobile()) {
-      document.querySelectorAll('a.link').forEach(link => {
+    // Обработка кликов на ссылках
+    if (isMobile) {
+      document.querySelectorAll('.link').forEach(link => {
         link.addEventListener('click', function (e) {
+          // Предотвратить повторный показ анимации при возврате
+          if (sessionStorage.getItem('clicked')) return;
+
           e.preventDefault();
-          const originalContent = this.innerHTML;
-          this.innerHTML = '<div class="loader"></div>';
-          const href = this.getAttribute('href');
+          link.classList.add('loading');
+          sessionStorage.setItem('clicked', 'true');
+          const href = link.getAttribute('href');
+
           setTimeout(() => {
             window.location.href = href;
-          }, 500);
+          }, 400); // Задержка для анимации
+        });
+      });
+
+      // Сброс при загрузке
+      window.addEventListener('pageshow', () => {
+        sessionStorage.removeItem('clicked');
+        document.querySelectorAll('.link').forEach(link => {
+          link.classList.remove('loading');
         });
       });
     }
