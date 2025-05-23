@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elazar</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    referrerpolicy="no-referrer"
+  />
   <style>
     @font-face {
       font-family: 'Alien League';
@@ -17,7 +21,7 @@
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
       color: #fff;
-      padding: 5px;
+      padding: 5px 5px;
       text-align: center;
     }
 
@@ -26,6 +30,9 @@
       font-size: 50px;
       margin: 25px auto;
       user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
       pointer-events: none;
     }
 
@@ -97,7 +104,7 @@
       margin-bottom: 30px;
     }
 
-    /* Отключение hover/shine на мобильных */
+    /* Удаление hover-эффекта и shine-анимации на мобильных устройствах */
     @media (hover: none) {
       .link:hover {
         background: #1e1e1e !important;
@@ -108,20 +115,26 @@
       }
     }
 
-    /* Индикатор загрузки */
-    .loading::after {
+    /* Индикатор загрузки (кружочек) */
+    .link.loading {
+      pointer-events: none;
+      color: transparent;
+    }
+
+    .link.loading::after {
       content: "";
-      border: 2px solid #ccc;
-      border-top-color: #fff;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #fff;
+      border-top: 2px solid transparent;
       border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      margin-left: 8px;
       animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -129,50 +142,60 @@
   <div class="logo-text">Elazar</div>
   <h1>Не́вротов Алексей Сергеевич</h1>
 
-  <a class="link shine" href="https://www.behance.net/aleksey_nevrotov"><i class="fab fa-behance"></i>Behance</a>
-  <a class="link shine" href="https://www.beatport.com/artist/elazar/772554"><i class="fas fa-music"></i>Beatport</a>
-  <a class="link shine" href="http://www.youtube.com/@AlekseiNevrotov"><i class="fab fa-youtube"></i>YouTube</a>
-  <a class="link" href="https://music.apple.com/ru/artist/elazar/1133744695"><i class="fab fa-apple"></i>Apple Music</a>
-  <a class="link" href="https://open.spotify.com/artist/5QGwiMzykUdiSBVTbZZISe"><i class="fab fa-spotify"></i>Spotify</a>
-  <a class="link" href="https://soundcloud.com/elazarofficial"><i class="fab fa-soundcloud"></i>SoundCloud</a>
-  <a class="link" href="https://www.facebook.com/elazarsound/"><i class="fab fa-facebook"></i>Facebook</a>
-  <a class="link" href="https://instagram.com/elazarofficial/"><i class="fab fa-instagram"></i>Instagram</a>
-  <a class="link" href="https://www.threads.net/@elazarofficial"><i class="fas fa-globe"></i>Threads</a>
-  <a class="link" href="https://vk.com/artist/elazar"><i class="fab fa-vk"></i>VK</a>
+  <a class="link shine" href="https://www.behance.net/aleksey_nevrotov" target="_blank"><i class="fab fa-behance"></i>Behance</a>
+  <a class="link shine" href="https://www.beatport.com/artist/elazar/772554" target="_blank"><i class="fas fa-music"></i>Beatport</a>
+  <a class="link shine" href="http://www.youtube.com/@AlekseiNevrotov" target="_blank"><i class="fab fa-youtube"></i>YouTube</a>
+  <a class="link" href="https://music.apple.com/ru/artist/elazar/1133744695" target="_blank"><i class="fab fa-apple"></i>Apple Music</a>
+  <a class="link" href="https://open.spotify.com/artist/5QGwiMzykUdiSBVTbZZISe" target="_blank"><i class="fab fa-spotify"></i>Spotify</a>
+  <a class="link" href="https://soundcloud.com/elazarofficial" target="_blank"><i class="fab fa-soundcloud"></i>SoundCloud</a>
+  <a class="link" href="https://www.facebook.com/elazarsound/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+  <a class="link" href="https://instagram.com/elazarofficial/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+  <a class="link" href="https://www.threads.net/@elazarofficial" target="_blank"><i class="fas fa-globe"></i>Threads</a>
+  <a class="link" href="https://vk.com/artist/elazar" target="_blank"><i class="fab fa-vk"></i>VK</a>
   <a class="link" href="tg://resolve?domain=elazarofficial"><i class="fab fa-telegram"></i>Telegram</a>
-  <a class="link" href="https://profi.ru/geo-spb/profile/NevrotovAS/"><i class="fas fa-briefcase"></i>Profi.ru</a>
+  <a class="link" href="https://profi.ru/geo-spb/profile/NevrotovAS/" target="_blank"><i class="fas fa-briefcase"></i>Profi.ru</a>
 
   <footer>© 2025 Elazar. Все права защищены.</footer>
 
   <script>
-    // Проверка на мобильное устройство
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // Обработка кликов на ссылках
     if (isMobile) {
       document.querySelectorAll('.link').forEach(link => {
         link.addEventListener('click', function (e) {
-          // Предотвратить повторный показ анимации при возврате
-          if (sessionStorage.getItem('clicked')) return;
+          if (link.classList.contains('loading')) return;
 
           e.preventDefault();
-          link.classList.add('loading');
-          sessionStorage.setItem('clicked', 'true');
-          const href = link.getAttribute('href');
 
+          document.querySelectorAll('.link').forEach(l => l.classList.remove('loading'));
+          link.classList.add('loading');
+          sessionStorage.setItem('elazar-loading', 'true');
+
+          const href = link.getAttribute('href');
           setTimeout(() => {
             window.location.href = href;
-          }, 400); // Задержка для анимации
+          }, 400);
         });
       });
 
-      // Сброс при загрузке
-      window.addEventListener('pageshow', () => {
-        sessionStorage.removeItem('clicked');
-        document.querySelectorAll('.link').forEach(link => {
-          link.classList.remove('loading');
-        });
+      function resetLoadingState() {
+        sessionStorage.removeItem('elazar-loading');
+        document.querySelectorAll('.link').forEach(link => link.classList.remove('loading'));
+      }
+
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted || sessionStorage.getItem('elazar-loading')) {
+          resetLoadingState();
+        }
       });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          resetLoadingState();
+        }
+      });
+
+      window.addEventListener('load', resetLoadingState);
     }
   </script>
 </body>
