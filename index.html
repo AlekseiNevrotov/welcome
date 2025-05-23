@@ -13,8 +13,7 @@
   <style>
     @font-face {
       font-family: 'Alien League';
-      src: url('fonts/AlienLeague.woff2') format('woff2'),
-           url('fonts/AlienLeague.woff') format('woff');
+      src: url('fonts/AlienLeague.woff') format('woff');
       font-display: swap;
     }
 
@@ -24,8 +23,6 @@
       color: #fff;
       padding: 5px 5px;
       text-align: center;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
     }
 
     .logo-text {
@@ -109,6 +106,18 @@
       font-size: 12px;
       color: #666;
       margin-bottom: 30px;
+    }
+
+    /* Удаление hover-эффекта и shine-анимации на мобильных устройствах */
+    @media (hover: none) {
+      .link:hover {
+        background: #1e1e1e !important;
+        transform: none !important;
+      }
+
+      .link.shine::before {
+        animation: none !important;
+      }
     }
   </style>
 </head>
