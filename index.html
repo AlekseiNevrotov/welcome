@@ -8,9 +8,13 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    referrerpolicy="no-referrer"
-  />
+    referrerpolicy="no-referrer"/>
   <style>
+    @font-face {
+      font-family: 'Alien League';
+      src: url('https://cdn.jsdelivr.net/gh/AlekseyNevrotov/fonts/AlienLeague.ttf') format('truetype');
+      font-display: swap;
+    }
     body {
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
@@ -18,16 +22,20 @@
       padding: 5px 5px;
       text-align: center;
     }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 0px;
+    .logo-text {
+      font-family: 'Alien League', sans-serif;
+      font-size: 50px;
+      margin: 25px auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      pointer-events: none;
     }
     h1 {
       font-size: 20px;
       margin-bottom: 25px;
+      font-weight: 400
     }
     .link {
       position: relative;
@@ -36,7 +44,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 10px auto;
+      margin: 15px auto;
       max-width: 70%;
       padding: 15px 25px;
       background: #1e1e1e;
@@ -86,11 +94,12 @@
       margin-top: 25px;
       font-size: 12px;
       color: #666;
+      margin-bottom: 30px
     }
   </style>
 </head>
 <body>
-  <img src="https://i.postimg.cc/yxN8r8bd/logo.png" alt="Elazar" class="avatar" />
+  <div class="logo-text">Elazar</div>
   <h1>Не́вротов Алексей Сергеевич</h1>
   <a class="link shine" href="https://www.behance.net/aleksey_nevrotov" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-behance"></i>Behance
