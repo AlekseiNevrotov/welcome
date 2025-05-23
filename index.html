@@ -7,12 +7,14 @@
   <meta name="description" content="Невротов Алексей Сергеевич: дизайн, музыка, соцсети. Всё в одном месте." />
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
   <style>
     @font-face {
       font-family: 'Alien League';
       src: url('fonts/AlienLeague.woff') format('woff');
       font-display: swap;
     }
+
     body {
       font-family: 'Ubuntu', sans-serif;
       background: #121212;
@@ -20,6 +22,7 @@
       padding: 5px 5px;
       text-align: center;
     }
+
     .logo-text {
       font-family: 'Alien League', sans-serif;
       font-size: 50px;
@@ -27,11 +30,13 @@
       user-select: none;
       pointer-events: none;
     }
+
     h1 {
       font-size: 20px;
       margin-bottom: 25px;
       font-weight: 400;
     }
+
     .link {
       position: relative;
       overflow: hidden;
@@ -50,17 +55,21 @@
       font-size: 15px;
       transition: 0.3s;
     }
+
     .link i {
       font-size: 15px;
     }
+
     .link:hover {
       background: #2b2b2b;
       transform: scale(1.02);
     }
+
     .link:active {
       transform: scale(0.97);
       background: #3a3a3a;
     }
+
     .link.shine::before {
       content: "";
       position: absolute;
@@ -77,29 +86,37 @@
       animation: shine 2.5s ease-in-out infinite;
       pointer-events: none;
     }
+
     @keyframes shine {
       0% { left: -100%; }
       100% { left: 100%; }
     }
+
     footer {
       margin-top: 25px;
       font-size: 12px;
       color: #666;
       margin-bottom: 30px;
     }
+
+    /* Удаляем hover-эффекты и shine на мобильных */
     @media (hover: none) {
       .link:hover {
         background: #1e1e1e !important;
         transform: none !important;
       }
+
       .link.shine::before {
         animation: none !important;
       }
     }
+
+    /* Мобильный индикатор загрузки */
     .link.loading {
       pointer-events: none;
       color: transparent !important;
     }
+
     .link.loading::after {
       content: "";
       position: absolute;
@@ -110,14 +127,18 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+
     .link:not(.loading)::after {
       display: none;
     }
+
     @keyframes spin {
       to {
         transform: rotate(360deg);
       }
     }
+
+    /* Глич-анимация */
     @keyframes glitch {
       0% {
         transform: none;
@@ -148,14 +169,17 @@
         opacity: 1;
       }
     }
+
     .logo-text.glitch {
       animation: glitch 0.6s linear;
     }
   </style>
 </head>
+
 <body>
   <div class="logo-text">Elazar</div>
   <h1>Не́вротов Алексей Сергеевич</h1>
+
   <a class="link shine" href="https://www.behance.net/aleksey_nevrotov" target="_blank" rel="noopener noreferrer"><i class="fab fa-behance"></i>Behance</a>
   <a class="link shine" href="https://www.beatport.com/artist/elazar/772554" target="_blank" rel="noopener noreferrer"><i class="fas fa-music"></i>Beatport</a>
   <a class="link shine" href="http://www.youtube.com/@AlekseiNevrotov" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i>YouTube</a>
@@ -168,33 +192,44 @@
   <a class="link" href="https://vk.com/artist/elazar" target="_blank" rel="noopener noreferrer"><i class="fab fa-vk"></i>VK</a>
   <a class="link" href="tg://resolve?domain=elazarofficial"><i class="fab fa-telegram"></i>Telegram</a>
   <a class="link" href="https://profi.ru/geo-spb/profile/NevrotovAS/" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase"></i>Profi.ru</a>
+
   <footer>© 2025 Elazar. Все права защищены.</footer>
+
   <script>
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
     if (isMobile) {
       const links = document.querySelectorAll('.link');
+
       links.forEach(link => {
         link.addEventListener('click', function (e) {
           if (link.classList.contains('loading')) return;
+
           e.preventDefault();
           sessionStorage.setItem('elazar-loading-href', link.href);
+
           links.forEach(l => l.classList.remove('loading'));
           link.classList.add('loading');
+
           setTimeout(() => {
             window.location.href = link.href;
           }, 400);
         });
       });
+
       const resetLoadingState = () => {
         sessionStorage.removeItem('elazar-loading-href');
         links.forEach(link => link.classList.remove('loading'));
       };
+
       window.addEventListener('pageshow', resetLoadingState);
       window.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') resetLoadingState();
       });
       window.addEventListener('load', resetLoadingState);
     }
+
+    // Глич-анимация логотипа при загрузке
     const logo = document.querySelector('.logo-text');
     logo.classList.add('glitch');
     setTimeout(() => {
