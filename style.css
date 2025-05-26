@@ -91,20 +91,20 @@
       color: transparent !important;
     }
     .link.loading::after {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: #666;
-  border-radius: 50%;
-  animation: bounceDot 0.5s linear infinite alternate;
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #666;
+      border-radius: 50%;
+      animation: bounceDot 0.5s linear infinite alternate;
 }
     .link:not(.loading)::after {
       display: none;
     }
     @keyframes bounceDot {
-  0% { left: 20%; }
-  100% { left: 80%; }
+      0% { left: 20%; }
+      100% { left: 80%; }
 }
     @keyframes glitch {
       0% {
