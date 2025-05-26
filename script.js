@@ -28,23 +28,3 @@
     setTimeout(() => {
       logo.classList.remove('glitch');
     }, 600);
-
-  function handleClick(e) {
-    const link = e.currentTarget;
-
-    if (window.matchMedia('(hover: none)').matches) {
-      e.preventDefault(); // остановим переход
-      link.classList.add('loading');
-
-      // подождем 1 секунду — и потом перейдем по ссылке
-      setTimeout(() => {
-        window.open(link.href, '_blank');
-      }, 1000);
-    }
-  }
-
-  // Добавим обработчики ко всем ссылкам
-  document.querySelectorAll('.link').forEach(link => {
-    link.addEventListener('click', handleClick);
-  });
-
