@@ -141,13 +141,3 @@
     .logo-text.glitch {
       animation: glitch 0.6s linear;
     }
-
-
-    
-    .link.loading {
-  position: relative;
-}
-
-.link.loading > * {
-  opacity: 0 !important;
-}
