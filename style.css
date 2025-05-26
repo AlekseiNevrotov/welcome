@@ -91,23 +91,53 @@
       color: transparent !important;
     }
     .link.loading::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: linear-gradient(90deg, #555 0%, #aaa 50%, #555 100%);
-  background-size: 200% 100%;
-  animation: progress 1.5s linear infinite;
-}
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #666;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
     .link:not(.loading)::after {
       display: none;
     }
-    @keyframes progress {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes glitch {
+      0% {
+        transform: none;
+        opacity: 1;
+      }
+      10% {
+        transform: translate(2px, -2px);
+        opacity: 0.8;
+      }
+      20% {
+        transform: translate(-2px, 2px);
+        opacity: 0.8;
+      }
+      30% {
+        transform: translate(2px, 2px);
+        opacity: 0.9;
+      }
+      40% {
+        transform: translate(-2px, -2px);
+        opacity: 1;
+      }
+      50% {
+        transform: none;
+        opacity: 1;
+      }
+      100% {
+        transform: none;
+        opacity: 1;
+      }
+    }
     .logo-text.glitch {
       animation: glitch 0.6s linear;
     }
