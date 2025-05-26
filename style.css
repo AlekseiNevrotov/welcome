@@ -87,9 +87,12 @@
       }
     }
     .link.loading {
-      pointer-events: none;
-      color: transparent !important;
-    }
+  position: relative;
+}
+
+.link.loading > * {
+  visibility: hidden;
+}
     .link.loading::after {
       content: "";
       position: absolute;
