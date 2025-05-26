@@ -87,8 +87,6 @@
       }
     }
     .link.loading {
-      color: transparent !important;
-      text-shadow: none !important;
       pointer-events: none;
       color: transparent !important;
     }
