@@ -87,12 +87,9 @@
       }
     }
     .link.loading {
-  position: relative;
-}
-
-.link.loading > * {
-  visibility: hidden;
-}
+      pointer-events: none;
+      color: transparent !important;
+    }
     .link.loading::after {
       content: "";
       position: absolute;

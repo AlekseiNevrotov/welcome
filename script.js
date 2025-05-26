@@ -28,15 +28,3 @@
     setTimeout(() => {
       logo.classList.remove('glitch');
     }, 600);
-    function handleClick(e) {
-  const link = e.currentTarget;
-
-  if (window.matchMedia('(hover: none)').matches) {
-    e.preventDefault();
-    link.classList.add('loading');
-
-    setTimeout(() => {
-      window.open(link.href, '_blank');
-    }, 1000);
-  }
-}
