@@ -16,11 +16,17 @@
       margin: 25px auto;
       user-select: none;
       pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none; /* Safari / iOS */
+      -ms-user-select: none;
     }
     h1 {
       font-size: 20px;
       margin-bottom: 25px;
       font-weight: 400;
+      user-select: none;
+      -webkit-user-select: none; /* Safari / iOS */
+      -ms-user-select: none;
     }
     .link {
       position: relative;
