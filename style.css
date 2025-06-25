@@ -51,7 +51,7 @@
     }
     .link:hover {
       background: rgb(54, 54, 54, 0.5);
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
     .link:active {
       transform: scale(0.95);
@@ -87,7 +87,7 @@
     @media (hover: none) {
       .link:hover {
         background: rgb(54, 54, 54, 0.5) !important;
-        transform: none !important;
+        transform: scale(1.05) !important;
         border: none;
       }
       .link.shine::before {
