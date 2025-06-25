@@ -86,7 +86,7 @@
     }
     @media (hover: none) {
       .link:hover {
-        background: rgb(54, 54, 54, 0.5) !important;
+        background: #363636 !important;
         transform: none !important;
         border: 1px solid #363636;
         border-radius: 30px;
