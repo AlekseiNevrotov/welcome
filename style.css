@@ -85,7 +85,7 @@
     }
     @media (hover: none) {
       .link:hover {
-        background: #363636 !important;
+        background: rgb(54, 54, 54, 0.5) !important;
         transform: none !important;
       }
       .link.shine::before {
