@@ -78,6 +78,7 @@
       animation: shine 2.5s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
+      border-radius: 30px;
     }
     @keyframes shine {
       0% { left: -100%; }
