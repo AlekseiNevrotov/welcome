@@ -50,7 +50,7 @@
       font-size: 15px;
     }
     .link:hover {
-      background: #363636;
+      background: rgb(54, 54, 54, 0.5);
       transform: scale(1.02);
     }
     .link:active {
