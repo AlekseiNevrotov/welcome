@@ -50,12 +50,12 @@
       font-size: 15px;
     }
     .link:hover {
-      background: rgb(54, 54, 54, 0.5);
+      background: rgba(54, 54, 54, 0.5);
       transform: scale(1.05);
     }
     .link:active {
       transform: scale(0.95);
-      background: rgb(54, 54, 54, 0.5);
+      background: rgba(54, 54, 54, 0.5);
       border: none;
     }
     .link.shine::before {
@@ -86,7 +86,7 @@
     }
     @media (hover: none) {
       .link:hover {
-        background: rgb(54, 54, 54, 0.5) !important;
+        background: rgba(54, 54, 54, 0.5) !important;
         transform: none !important;
         border: 1px solid rgba(54, 54, 54, 0.5);
         border-radius: 30px;
