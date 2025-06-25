@@ -99,9 +99,9 @@
     .link.loading::after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #191919;
+      width: 5px;
+      height: 5px;
+      background: #fff;
       border-radius: 50%;
       animation: bounceDot 0.5s linear infinite alternate;
 }
