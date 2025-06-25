@@ -17,7 +17,7 @@
       user-select: none;
       pointer-events: none;
       user-select: none;
-      -webkit-user-select: none; /* Safari / iOS */
+      -webkit-user-select: none;
       -ms-user-select: none;
     }
     h1 {
@@ -25,7 +25,7 @@
       margin-bottom: 25px;
       font-weight: 400;
       user-select: none;
-      -webkit-user-select: none; /* Safari / iOS */
+      -webkit-user-select: none;
       -ms-user-select: none;
     }
     .link {
@@ -38,8 +38,7 @@
       margin: 15px auto;
       max-width: 70%;
       padding: 15px 25px;
-      background: #1e1e1e;
-      border: 1px solid #333;
+      background: #191919;
       border-radius: 30px;
       color: #fff;
       text-decoration: none;
@@ -50,12 +49,12 @@
       font-size: 15px;
     }
     .link:hover {
-      background: #2b2b2b;
+      background: #282828;
       transform: scale(1.02);
     }
     .link:active {
-      transform: scale(0.97);
-      background: #3a3a3a;
+      transform: scale(0.95);
+      background: #333333;
     }
     .link.shine::before {
       content: "";
@@ -66,9 +65,9 @@
       height: 100%;
       background: linear-gradient(
         120deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.07) 50%,
-        rgba(255, 255, 255, 0) 100%
+        #ffffff00 0%,
+        #ffffff1a 50%,
+        #ffffff00 100%
       );
       animation: shine 2.5s ease-in-out infinite;
       pointer-events: none;
@@ -80,12 +79,12 @@
     footer {
       margin-top: 25px;
       font-size: 12px;
-      color: #666;
+      color: #5a5a5a;
       margin-bottom: 30px;
     }
     @media (hover: none) {
       .link:hover {
-        background: #1e1e1e !important;
+        background: #282828 !important;
         transform: none !important;
       }
       .link.shine::before {
@@ -101,7 +100,7 @@
       position: absolute;
       width: 5px;
       height: 5px;
-      background: #666;
+      background: #282828;
       border-radius: 50%;
       animation: bounceDot 0.5s linear infinite alternate;
 }
