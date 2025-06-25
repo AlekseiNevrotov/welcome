@@ -86,9 +86,9 @@
     }
     @media (hover: none) {
       .link:hover {
-        background: rgba(54, 54, 54, 0.5) !important;
+        background: rgb(54, 54, 54) !important;
         transform: none !important;
-        border: 1px solid rgba(54, 54, 54, 0.5);
+        border: 1px solid rgb(54, 54, 54);
         border-radius: 30px;
       }
       .link.shine::before {
