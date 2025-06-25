@@ -88,7 +88,7 @@
       .link:hover {
         background: rgb(54, 54, 54, 0.5) !important;
         transform: none !important;
-        border: 1px solid #363636 !important;
+        border: 1px solid rgb(54, 54, 54, 0.5) !important;
         border-radius: 30px !important;
       }
       .link.shine::before {
