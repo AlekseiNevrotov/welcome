@@ -50,12 +50,12 @@
       font-size: 15px;
     }
     .link:hover {
-      background: rgb(54, 54, 54, 0.2);
+      background: rgb(54, 54, 54, 0.5);
       transform: scale(1.02);
     }
     .link:active {
       transform: scale(0.95);
-      background: #363636;
+      background: rgb(54, 54, 54, 0.5);
     }
     .link.shine::before {
       content: "";
