@@ -55,7 +55,7 @@
     }
     .link:active {
       transform: scale(0.95);
-      background: rgb(54, 54, 54);
+      background: #363636;
     }
     .link.shine::before {
       content: "";
@@ -85,7 +85,7 @@
     }
     @media (hover: none) {
       .link:hover {
-        background: #282828 !important;
+        background: #363636 !important;
         transform: none !important;
       }
       .link.shine::before {
