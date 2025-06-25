@@ -92,7 +92,7 @@
         border-radius: 30px;
       }
       .link.shine::before {
-        animation: none !important;
+        animation: shine 2.5s ease-in-out infinite;
       }
     }
     .link.loading {
