@@ -5,7 +5,7 @@
     }
     body {
       font-family: 'Ubuntu', sans-serif;
-      background: #121212;
+      background: #191919;
       color: #fff;
       padding: 5px 5px;
       text-align: center;
@@ -100,7 +100,7 @@
       position: absolute;
       width: 5px;
       height: 5px;
-      background: #282828;
+      background: #191919;
       border-radius: 50%;
       animation: bounceDot 0.5s linear infinite alternate;
 }
