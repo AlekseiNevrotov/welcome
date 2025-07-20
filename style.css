@@ -154,3 +154,32 @@
     .logo-text.glitch {
       animation: glitch 0.6s linear;
     }
+    #preloader {
+            position: fixed;
+            align-items: center; 
+            justify-content: center; 
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: 121212;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.4s;
+        }
+        #preloader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #fff;
+            border-top: 1px solid #616161;
+            border-radius: 100%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
