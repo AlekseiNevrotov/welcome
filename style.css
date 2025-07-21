@@ -171,8 +171,8 @@
     border: 1px solid #ffffff; 
     border-top: 1px solid #616161; 
     border-radius: 50%;
-    width: 40px; 
-    height: 40px; 
+    width: 30px; 
+    height: 30px; 
     animation: spin 1s linear infinite; 
 }
 @keyframes spin {
