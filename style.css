@@ -171,7 +171,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%; 
-    border: 5px solid transparent; 
+    border: 1px solid transparent; 
     border-top-color: #616161; 
     animation: spin 0.5s linear infinite; 
 }
