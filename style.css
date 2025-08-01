@@ -172,7 +172,7 @@
     height: 30px;
     border-radius: 50%; 
     border: 1px solid transparent; 
-    border-top-color: #616161; 
+    border-top-color: rgb(54, 54, 54); 
     animation: spin 0.5s linear infinite; 
 }
 @keyframes spin {
