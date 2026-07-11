@@ -36,3 +36,25 @@ document.fonts.ready.then(function() {
     }, 600);
   }, 600);
 });
+window.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.getElementById('fullname');
+      const text = h1.textContent;
+      const words = text.split(' ');
+      let surname = words[0];
+      const letterIndex = surname.indexOf('е');
+      if (letterIndex !== -1) {
+        let letters = surname.split('');
+        function updateSurname(withAccent) {
+          letters[letterIndex] = withAccent ? 'é' : 'е';
+          words[0] = letters.join('');
+          h1.textContent = words.join(' ');
+        }
+        updateSurname(false);
+        setTimeout(() => {
+          updateSurname(true);
+        }, 3000);
+        setTimeout(() => {
+          updateSurname(false);
+        }, 6000);
+      }
+    });
