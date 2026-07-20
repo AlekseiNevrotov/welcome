@@ -13,6 +13,7 @@
     .logo-text {
       font-family: 'Alien League', sans-serif;
       font-size: 50px;
+      line-height: 50px;
       margin: 25px auto;
       user-select: none;
       pointer-events: none;
